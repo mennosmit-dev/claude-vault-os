@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "uv run --no-project --quiet python \"$CLAUDE_PROJECT_DIR/_system/hooks.py\" session-start", "timeout": 20 } ] }
+    ],
+    "Stop": [
+      { "hooks": [
+        { "type": "command", "command": "uv run --no-project --quiet python \"$CLAUDE_PROJECT_DIR/_system/hooks.py\" stop", "timeout": 20 },
+        { "type": "command", "command": "uv run --no-project --quiet python \"$CLAUDE_PROJECT_DIR/_system/hooks.py\" backup", "timeout": 30 }
+      ] }
+    ],
+    "SessionEnd": [
+      { "hooks": [ { "type": "command", "command": "uv run --no-project --quiet python \"$CLAUDE_PROJECT_DIR/_system/hooks.py\" end", "timeout": 30 } ] }
+    ]
+  }
+}
