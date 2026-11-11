@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Claude Code: per-machine settings and hook state
+.claude/settings.local.json
+.claude/state/
+
+# Generated pages (day plan, briefs)
+_export/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.obsidian/workspace*.json
